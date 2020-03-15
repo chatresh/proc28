@@ -6,9 +6,7 @@ const Constraint = Matter.Constraint;
 var engine, world;
 var slingshot;
 
-function preload(){
-    backgroundImg = loadImage("sprites/bg.jpg");
-}
+
 function setup(){
     var canvas = createCanvas(1300,600);
     engine = Engine.create();
@@ -62,7 +60,7 @@ function setup(){
 }
 
 function draw(){
-    background(backgroundImg);
+    background(255,168,85);
     Engine.update(engine);
     
     ground.display();
@@ -116,5 +114,10 @@ function mouseDragged(){
 
 function mouseReleased(){
     sling.fly();
+}
+function KeyPressed(){
+    if(keyCode===32){
+        sling.attach();
+    }
 }
 
